@@ -61,6 +61,16 @@ exports['screenshot-basic']:requestScreenshotUpload('https://wew.wtf/upload.php'
 end)
 ```
 
+Example for GCPHONE:
+
+```lua
+exports['screenshot-basic']:requestScreenshotUpload("https://discord.com/api/webhooks/PUT_THE_LINK_HERE", "files[]", function(data)
+   local image = json.decode(data)
+   DestroyMobilePhone()
+   CellCamActivate(false, false)
+   cb(json.encode({ url = image.attachments[1].proxy_url }))
+end)
+
 ### Server
 The server can also request a client to take a screenshot and upload it to a built-in HTTP handler on the server.
 

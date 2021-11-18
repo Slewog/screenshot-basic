@@ -70,6 +70,7 @@ exports['screenshot-basic']:requestScreenshotUpload("https://discord.com/api/web
    CellCamActivate(false, false)
    cb(json.encode({ url = image.attachments[1].proxy_url }))
 end)
+```
 
 ### Server
 The server can also request a client to take a screenshot and upload it to a built-in HTTP handler on the server.
